@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nurul Syafiqah 💕</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose: #e8556d;
+    --blush: #f9c5d1;
+    --cream: #fff8f9;
+    --deep: #3a1a2e;
+    --gold: #f0c27f;
+    --soft: #fde8ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* Floating hearts background */
+  .hearts-bg {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .heart-float {
+    position: absolute;
+    bottom: -60px;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(0) rotate(-10deg); opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.3; }
+    100% { transform: translateY(-110vh) rotate(10deg); opacity: 0; }
+  }
+
+  /* Confetti */
+  .confetti-piece {
+    position: fixed;
+    width: 10px; height: 10px;
+    top: -20px;
+    border-radius: 2px;
+    animation: confettiFall linear forwards;
+    pointer-events: none;
+    z-index: 999;
+  }
+  @keyframes confettiFall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* Header */
+  header {
+    position: relative; z-index: 1;
+    text-align: center;
+    padding: 60px 20px 30px;
+  }
+  header .tag {
+    display: inline-block;
+    background: var(--blush);
+    color: var(--rose);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    color: var(--deep);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  header h1 em {
+    color: var(--rose);
+    font-style: italic;
+  }
+  header p {
+    color: #8a5a6a;
+    font-size: 1.05rem;
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Main card area */
+  .container {
+    position: relative; z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* Motivation Card */
+  .card {
+    background: white;
+    border-radius: 28px;
+    padding: 40px 36px;
+    box-shadow: 0 8px 40px rgba(232,85,109,0.12), 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 50px rgba(232,85,109,0.18), 0 4px 16px rgba(0,0,0,0.06);
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--rose), var(--gold), var(--blush));
+    border-radius: 28px 28px 0 0;
+  }
+  .card-emoji {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+    display: block;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+  }
+  .card-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: var(--deep);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    font-style: italic;
+  }
+  .card-sub {
+    color: #b07a8a;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  /* Buttons */
+  .btn-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .btn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 26px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    letter-spacing: 0.3px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--rose), #c7304a);
+    color: white;
+    box-shadow: 0 6px 22px rgba(232,85,109,0.4);
+  }
+  .btn-primary:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 0 10px 30px rgba(232,85,109,0.5);
+  }
+  .btn-primary:active { transform: scale(0.97); }
+
+  .btn-soft {
+    background: var(--soft);
+    color: var(--rose);
+    border: 2px solid var(--blush);
+  }
+  .btn-soft:hover {
+    background: var(--blush);
+    transform: scale(1.05);
+  }
+
+  /* TRICKSTER BUTTONS */
+  .trick-section {
+    background: white;
+    border-radius: 28px;
+    padding: 34px 36px;
+    box-shadow: 0 8px 40px rgba(232,85,109,0.10);
+    margin-bottom: 28px;
+  }
+  .trick-section h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--deep);
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+  .trick-section p {
+    color: #b07a8a;
+    font-size: 0.88rem;
+    margin-bottom: 22px;
+  }
+  .trick-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media(max-width:480px) { .trick-grid { grid-template-columns: 1fr; } }
+
+  .trick-btn {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 14px 18px;
+    border: 2px solid var(--blush);
+    border-radius: 16px;
+    cursor: pointer;
+    background: var(--soft);
+    color: var(--deep);
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .trick-btn:hover { background: var(--blush); border-color: var(--rose); }
+
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--deep);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1), opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    max-width: 90vw;
+    text-align: center;
+  }
+  #toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+
+  /* Run-away button */
+  #runBtn {
+    position: relative;
+    transition: left 0.0s, top 0.0s;
+  }
+
+  /* Countdown */
+  .love-counter {
+    background: linear-gradient(135deg, var(--rose), #c7304a);
+    border-radius: 28px;
+    padding: 34px 36px;
+    color: white;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .love-counter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    opacity: 0.92;
+  }
+  .counter-nums {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .counter-unit {
+    text-align: center;
+  }
+  .counter-unit .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+  }
+  .counter-unit .label {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-top: 4px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    color: #c09aaa;
+    font-size: 0.85rem;
+    padding-bottom: 40px;
+    position: relative; z-index: 1;
+  }
+  footer span { color: var(--rose); }
+
+  /* Click sparkle */
+  .sparkle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 1.2rem;
+    z-index: 9998;
+    animation: sparkleOut 0.7s ease forwards;
+  }
+  @keyframes sparkleOut {
+    0%   { transform: scale(0) translateY(0); opacity: 1; }
+    100% { transform: scale(1.5) translateY(-40px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating hearts -->
+<div class="hearts-bg" id="heartsBg"></div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<header>
+  <div class="tag">✨ This is for Nurul Syafiqah</div>
+  <h1>Hey, <em>Syafiqah</em> 💕</h1>
+  <p>On the days you feel like giving up — remember someone out there thinks you, Nurul Syafiqah, are absolutely extraordinary.</p>
+</header>
+
+<div class="container">
+
+  <!-- Motivation Card -->
+  <div class="card" id="quoteCard">
+    <span class="card-emoji" id="quoteEmoji">🌸</span>
+    <p class="card-quote" id="quoteText">"You are braver than you believe, stronger than you seem, and more loved than you could ever imagine."</p>
+    <p class="card-sub" id="quoteSub">— from someone who adores you</p>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="newQuote()">💌 New Message</button>
+    <button class="btn btn-soft" onclick="boom()">🎉 Celebrate Me!</button>
+  </div>
+
+  <!-- Love Counter -->
+  <div class="love-counter">
+    <h2>💖 Syafiqah has been amazing for...</h2>
+    <div class="counter-nums">
+      <div class="counter-unit"><span class="num" id="cDays">0</span><span class="label">Days</span></div>
+      <div class="counter-unit"><span class="num" id="cHours">0</span><span class="label">Hours</span></div>
+      <div class="counter-unit"><span class="num" id="cMins">0</span><span class="label">Minutes</span></div>
+      <div class="counter-unit"><span class="num" id="cSecs">0</span><span class="label">Seconds</span></div>
+    </div>
+  </div>
+
+  <!-- Trickster Section -->
+  <div class="trick-section">
+    <h2>🎭 Fun Buttons</h2>
+    <p>Don't trust everything you see here…</p>
+    <div class="trick-grid">
+      <button class="trick-btn" onclick="fakeSecret()">🔐 Secret Message</button>
+      <button class="trick-btn" id="runBtn" onmouseover="runAway(this)" onclick="caughtYou()">😈 Do NOT Click</button>
+      <button class="trick-btn" onclick="bigLove()">💝 How Much I Love You</button>
+      <button class="trick-btn" onclick="fakeLoading()">🎁 Surprise Gift Inside</button>
+      <button class="trick-btn" onclick="tooManyHearts()">💗 Only 1 Heart</button>
+      <button class="trick-btn" onclick="selfDestruct()">💣 Self-Destruct (don't)</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>Made with <span>♥</span> just for Nurul Syafiqah — always.</footer>
+
+<script>
+// ─── QUOTES ───────────────────────────────────────────
+const quotes = [
+  { e:"🌸", q:"\"You are braver than you believe, stronger than you seem, and more loved than you could ever imagine.\"", s:"— from someone who adores you, Syafiqah" },
+  { e:"🌟", q:"\"Even on your hardest days, Syafiqah, you light up every room you walk into.\"", s:"— written in the stars for you" },
+  { e:"🦋", q:"\"You are not 'too much'. You are just the right amount of everything beautiful.\"", s:"— a love note from the universe to Nurul Syafiqah" },
+  { e:"🍓", q:"\"Syafiqah, your laugh is literally my favourite sound in the entire world.\"", s:"— no exaggeration whatsoever" },
+  { e:"🌙", q:"\"Rest if you must, but never quit — I'll be cheering you on every single step, Syafiqah.\"", s:"— your biggest fan" },
+  { e:"💫", q:"\"You don't need to have it all figured out. You just need to keep going. And you are.\"", s:"— proud of you always, Syafiqah" },
+  { e:"🌺", q:"\"On the days you feel invisible, Syafiqah — know that someone is thinking about you right now.\"", s:"— (it's me, hi)" },
+  { e:"🎀", q:"\"Nurul Syafiqah, you deserve all the good things that are coming. Please don't forget that.\"", s:"— the universe, via me" },
+  { e:"🌈", q:"\"Your kindness is a superpower. Your smile is a weapon. Syafiqah, you are unstoppable.\"", s:"— certified fact" },
+  { e:"🕯️", q:"\"Some people make the world brighter just by existing. Nurul Syafiqah, you are one of those people.\"", s:"— forever and always" },
+];
+
+let lastIdx = -1;
+function newQuote() {
+  let idx;
+  do { idx = Math.floor(Math.random() * quotes.length); } while (idx === lastIdx);
+  lastIdx = idx;
+  const { e, q, s } = quotes[idx];
+  const card = document.getElementById('quoteCard');
+  card.style.opacity = '0';
+  card.style.transform = 'scale(0.95)';
+  setTimeout(() => {
+    document.getElementById('quoteEmoji').textContent = e;
+    document.getElementById('quoteText').textContent = q;
+    document.getElementById('quoteSub').textContent = s;
+    card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(-4px)';
+  }, 250);
+  card.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+}
+document.getElementById('quoteCard').style.transition = 'opacity 0.4s, transform 0.4s';
+
+// ─── CONFETTI ─────────────────────────────────────────
+function boom() {
+  const colors = ['#e8556d','#f0c27f','#f9c5d1','#a78bfa','#34d399','#60a5fa'];
+  for (let i = 0; i < 80; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.width = (8 + Math.random() * 8) + 'px';
+    el.style.height = (8 + Math.random() * 8) + 'px';
+    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    el.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+    el.style.animationDelay = (Math.random() * 0.6) + 's';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3500);
+  }
+  showToast("🎊 You deserve every bit of this celebration!");
+}
+
+// ─── LOVE COUNTER (since Jan 1, 2024 — change as needed) ──
+const START_DATE = new Date('2024-01-01T00:00:00');
+function updateCounter() {
+  const now = new Date();
+  const diff = now - START_DATE;
+  const days  = Math.floor(diff / 864e5);
+  const hours = Math.floor((diff % 864e5) / 36e5);
+  const mins  = Math.floor((diff % 36e5) / 6e4);
+  const secs  = Math.floor((diff % 6e4) / 1e3);
+  document.getElementById('cDays').textContent  = days;
+  document.getElementById('cHours').textContent = hours;
+  document.getElementById('cMins').textContent  = mins;
+  document.getElementById('cSecs').textContent  = secs;
+}
+updateCounter();
+setInterval(updateCounter, 1000);
+
+// ─── FLOATING HEARTS ─────────────────────────────────
+const heartsBg = document.getElementById('heartsBg');
+const heartEmojis = ['💕','💗','💓','🌸','✨','💝','🌺'];
+for (let i = 0; i < 18; i++) {
+  const h = document.createElement('div');
+  h.className = 'heart-float';
+  h.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+  h.style.left = (Math.random() * 100) + '%';
+  h.style.animationDuration = (8 + Math.random() * 12) + 's';
+  h.style.animationDelay = (Math.random() * 10) + 's';
+  h.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
+  heartsBg.appendChild(h);
+}
+
+// ─── TOAST ───────────────────────────────────────────
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ─── SPARKLE ON CLICK ─────────────────────────────────
+document.addEventListener('click', e => {
+  const sparks = ['✨','💕','⭐','🌸','💫'];
+  const el = document.createElement('div');
+  el.className = 'sparkle';
+  el.textContent = sparks[Math.floor(Math.random() * sparks.length)];
+  el.style.left = (e.clientX - 12) + 'px';
+  el.style.top  = (e.clientY - 12) + 'px';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 750);
+});
+
+// ─── TRICKSTER FUNCTIONS ─────────────────────────────
+
+// 1. Fake secret — three-step tease
+let secretStep = 0;
+const secretMsgs = [
+  "🔐 Decrypting... please wait...",
+  "⏳ Almost there... 99% done...",
+  "💌 The secret is: You are absolutely perfect. That's it. That's the secret. 🥹"
+];
+function fakeSecret() {
+  showToast(secretMsgs[secretStep % 3]);
+  secretStep++;
+}
+
+// 2. Run-away button
+function runAway(btn) {
+  const vw = window.innerWidth - 160;
+  const vh = window.innerHeight - 60;
+  const x = Math.random() * vw;
+  const y = Math.random() * vh;
+  btn.style.position = 'fixed';
+  btn.style.left = x + 'px';
+  btn.style.top  = y + 'px';
+  btn.style.zIndex = 9000;
+  btn.style.transition = 'left 0.25s, top 0.25s';
+}
+function caughtYou() {
+  const btn = document.getElementById('runBtn');
+  btn.style.position = '';
+  btn.style.left = '';
+  btn.style.top = '';
+  showToast("😂 Got me! Here's a reward: you're amazing 🏆");
+}
+
+// 3. Big love — escalating
+let loveLevel = 0;
+const loveMsgs = [
+  "💝 This much → [    ]",
+  "💝💝 This much → [███   ]",
+  "💝💝💝 This much → [██████]",
+  "❌ ERROR: Number too large. Love overflowed. 💥",
+  "🔄 Rebooting love meter... STILL TOO MUCH.",
+  "🌌 Bigger than the universe. Unmeasurable. Infinite. That's how much."
+];
+function bigLove() {
+  showToast(loveMsgs[loveLevel % loveMsgs.length]);
+  loveLevel++;
+}
+
+// 4. Fake loading gift
+let giftStep = 0;
+const giftMsgs = [
+  "📦 Opening gift box...",
+  "🎀 Unwrapping layers...",
+  "✨ Almost revealed...",
+  "🎁 Your gift is: all the love in the world. Delivered. 💌"
+];
+function fakeLoading() {
+  showToast(giftMsgs[giftStep % giftMsgs.length]);
+  giftStep++;
+}
+
+// 5. Too many hearts — screen flood
+function tooManyHearts() {
+  showToast("Just 1 heart? Sure... 💗");
+  setTimeout(() => {
+    for (let i = 0; i < 30; i++) {
+      setTimeout(() => {
+        const h = document.createElement('div');
+        h.style.cssText = `position:fixed;font-size:${1+Math.random()*2}rem;left:${Math.random()*95}vw;top:${Math.random()*90}vh;z-index:9997;pointer-events:none;animation:sparkleOut 1.2s ease forwards;`;
+        h.textContent = ['💗','💕','💓','💝','❤️'][Math.floor(Math.random()*5)];
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 1300);
+      }, i * 80);
+    }
+  }, 800);
+}
+
+// 6. Self-destruct — total fake-out
+let sdStep = 0;
+function selfDestruct() {
+  const msgs = [
+    "💣 Self-destruct initiated... 10...",
+    "⚠️ 9... 8... 7...",
+    "🚨 3... 2... 1...",
+    "💥 BOOM! Just kidding 😂 You're stuck with this page (and me) forever 💕"
+  ];
+  showToast(msgs[sdStep % msgs.length]);
+  sdStep++;
+}
+</script>
+</body>
+</html>
